@@ -1,37 +1,40 @@
-export default function About() {
-    return (
-      <main
-        style={{
-          fontFamily: "Arial, sans-serif",
-          background: "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
-          color: "#fff",
-          minHeight: "100vh",
-          padding: "3rem 1rem",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-start",
-        }}
-      >
-        <div
-          style={{
-            backgroundColor: "rgba(255, 255, 255, 0.05)",
-            padding: "2.5rem",
-            borderRadius: "12px",
-            boxShadow: "0 6px 16px rgba(0, 0, 0, 0.4)",
-            maxWidth: "700px",
-            width: "100%",
-            textAlign: "center",
-            backdropFilter: "blur(6px)",
-          }}
-        >
-          <h1 style={{ fontSize: "2rem", color: "#4fd1c5", marginBottom: "1rem" }}>
-            About This Project
-          </h1>
-          <p style={{ fontSize: "1.1rem", color: "#eee" }}>
-            This project was built by Lana Al Dossary. I'm a junior MIS student aiming to build and learn.
-          </p>
-        </div>
-      </main>
-    );
-  }
+// app/about/page.js
+
+export default function AboutPage() {
+  return (
+    <main
+      style={{
+        fontFamily: "Arial, sans-serif",
+        background: "#f4f4f4",
+        color: "#333",
+        minHeight: "100vh",
+        padding: "3rem 2rem",
+        maxWidth: "800px",
+        margin: "0 auto",
+        lineHeight: "1.8"
+      }}
+    >
+      <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>عن دليل البيانات الذكي</h1>
+      <p>
+        دليل البيانات الذكي هو مشروع تفاعلي يهدف إلى تبسيط المفاهيم والبيانات الإحصائية
+        للمجتمع السعودي، من خلال واجهات سهلة، ولوحات تفاعلية، وتجربة استخدام مرنة وممتعة.
+      </p>
+
+      <p>
+        نطمح من خلال هذا الدليل إلى رفع الوعي بالبيانات الرسمية المتوفرة من الجهات الحكومية، وتمكين فئات المجتمع المختلفة —
+        من طلاب، وباحثين، وصنّاع قرار — من الوصول إلى المعلومة بسرعة ووضوح.
+      </p>
+
+      <p>
+        تم تطوير المنصة ضمن هاكاثون البيانات الإحصائية، باستخدام تقنيات حديثة مثل Next.js وRecharts، مع التركيز على تجربة المستخدم
+        وتقديم محتوى بصري بسيط ومباشر.
+      </p>
+
+      <p style={{ marginTop: "2rem", fontWeight: "bold" }}>
+        هذا المشروع من تطوير: Lana Al Dossary، طالبة نظم معلومات إدارية، شغوفة بتقنيات البيانات وذكاء العرض التفاعلي.
+      </p>
+    </main>
+  );
+}
+
   

@@ -1,76 +1,58 @@
+// app/sectors/page.js
+
 "use client";
-import { useState } from "react";
-import Link from "next/link";
+import Link from 'next/link';
 
-export default function Sectors() {
-  const [searchTerm, setSearchTerm] = useState("");
+const sectors = [
+  { title: "الصحة", description: "بيانات عن المستشفيات، الكوادر الطبية، والمؤشرات الصحية.", link: "/sectors/health" },
+  { title: "التعليم", description: "بيانات عن التعليم والمدارس والطلاب في المملكة.", link: "/sectors/education" },
+  { title: "النقل", description: "بيانات عن وسائل النقل، البنية التحتية، والطرق.", link: "/sectors/transportation" },
+  { title: "السياحة", description: "إحصاءات عن الزوار، الأنشطة السياحية، والمعالم.", link: "/sectors/tourism" },
+  { title: "الأعمال", description: "تحليل بيانات التجارة، الشركات، والمؤشرات الاقتصادية.", link: "/sectors/commerce" },
+  { title: "التطبيقات", description: "تطبيقات وأدوات مرتبطة بالبيانات الذكية.", link: "/sectors/apps" }
+];
 
-  const sectors = [
-    { name: "Education", slug: "education" },
-    { name: "Health", slug: "health" },
-    { name: "Commerce", slug: "commerce" },
-    { name: "Transportation", slug: "transportation" },
-    { name: "Tourism", slug: "tourism" },
-  ];
 
-  const filteredSectors = sectors.filter((sector) =>
-    sector.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
+export default function SectorsPage() {
   return (
     <main
       style={{
         fontFamily: "Arial, sans-serif",
-        background: "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
-        color: "#fff",
+        background: "#eef2f5",
         minHeight: "100vh",
-        padding: "3rem 1rem",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "flex-start",
+        padding: "3rem 2rem",
+        textAlign: "center"
       }}
     >
+      <h1 style={{ fontSize: "2.5rem", marginBottom: "2rem", color: "#2c5364" }}>القطاعات الإحصائية</h1>
+
       <div
         style={{
-          backgroundColor: "rgba(255, 255, 255, 0.05)",
-          padding: "2.5rem",
-          borderRadius: "12px",
-          boxShadow: "0 6px 16px rgba(0, 0, 0, 0.4)",
-          maxWidth: "700px",
-          width: "100%",
-          textAlign: "center",
-          backdropFilter: "blur(6px)",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gap: "1.5rem",
+          maxWidth: "1000px",
+          margin: "0 auto"
         }}
       >
-        <h1 style={{ fontSize: "2rem", color: "#4fd1c5", marginBottom: "1rem" }}>
-          Available Sectors
-        </h1>
-
-        <input
-          type="text"
-          placeholder="Search sectors..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          style={{
-            padding: "0.5rem",
-            marginBottom: "1.5rem",
-            width: "100%",
-            maxWidth: "400px",
-            border: "none",
-            borderRadius: "6px",
-            outline: "none",
-          }}
-        />
-
-        <ul style={{ listStyle: "none", padding: 0 }}>
-          {filteredSectors.map((sector, index) => (
-            <li key={index} style={{ margin: "0.5rem 0" }}>
-              <Link href={`/sectors/${sector.slug}`} style={{ color: "#4fd1c5", textDecoration: "underline" }}>
-                {sector.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {sectors.map((sector, index) => (
+          <Link key={index} href={sector.link} style={{ textDecoration: 'none' }}>
+            <div
+              style={{
+                background: "#fff",
+                padding: "1.5rem",
+                borderRadius: "10px",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                transition: "0.3s"
+              }}
+              onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.03)")}
+              onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+            >
+              <h2 style={{ color: "#203a43" }}>{sector.title}</h2>
+              <p style={{ color: "#555" }}>{sector.description}</p>
+            </div>
+          </Link>
+        ))}
       </div>
     </main>
   );
