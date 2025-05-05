@@ -1,5 +1,5 @@
 {
-  "name": "guide-data-site",
+  "name": "smart-data-guide",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,13 +10,11 @@
   },
   "dependencies": {
     "chart.js": "^4.4.9",
-    "csv-parser": "^3.2.0",
     "next": "15.3.1",
     "papaparse": "^5.5.2",
     "react": "^19.0.0",
     "react-chartjs-2": "^5.3.0",
-    "react-dom": "^19.0.0",
-    "recharts": "^2.15.3"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
